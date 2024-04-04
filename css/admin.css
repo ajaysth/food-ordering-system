@@ -38,6 +38,7 @@ table tr td{
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.6s ease;
 }
 .btn-primary:hover{
     background-color: #3742fa;
@@ -49,6 +50,7 @@ table tr td{
     color: black;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.6s ease;
 }
 .btn-secondary:hover{
     background-color: #2ed573;
@@ -60,6 +62,7 @@ table tr td{
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.6s ease;
 }
 .btn-danger:hover{
     background-color: #ff4757;
@@ -129,9 +132,9 @@ table tr td{
 
 
 /* css for login page */
-.login{
-    border: 1px solid black;
-    width: 20%;
+/* .login{
+    border: 2px solid black;
+    width: 30%;
     margin: 5% auto;
     padding: 5px;
-}
+} */

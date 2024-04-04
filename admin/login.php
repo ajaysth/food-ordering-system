@@ -8,44 +8,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
     <div class="login">
-        <h1 class="text-center">Login</h1>
-        <br><br>
-
-        <?php
-        if (isset($_SESSION['login'])) {
-            echo $_SESSION['login'];
-            unset($_SESSION['login']);
-        }
-
-        if (isset($_SESSION['no-login-message'])) {
-            echo $_SESSION['no-login-message'];
-            unset($_SESSION['no-login-message']);
-        }
-        ?>
-        <br>
-
-        <!-- login form starts -->
-        <form action="" method="POST" class="text-center">
-            Username:<br>
-
-            <input type="text" name="username" placeholder="Enter your username"><br><br>
-
-
-            Password:<br>
-
-            <input type="password" name="password" placeholder="Enter your password"><br><br>
-
-
-            <input type="submit" name="submit" value="Login" class="btn-primary">
+        <div class="login-box">
+            <h1 class="text-center">Login</h1>
             <br><br>
 
-        </form>
+            <?php
+            if (isset($_SESSION['login'])) {
+                echo $_SESSION['login'];
+                unset($_SESSION['login']);
+            }
 
-        <!-- login form ends here -->
+            if (isset($_SESSION['no-login-message'])) {
+                echo $_SESSION['no-login-message'];
+                unset($_SESSION['no-login-message']);
+            }
+            ?>
+            <br>
+
+            <!-- login form starts -->
+            <form action="" method="POST" class="text-center">
+                <label for="">Username:</label><br>
+
+                <input type="text" name="username" placeholder="Enter your username"><br><br>
+
+
+                <label for="">Password:</label><br>
+
+                <input type="password" name="password" placeholder="Enter your password"><br><br>
+
+
+                <!-- <input type="submit" name="submit" value="Login" class="btn-primary"> -->
+                <button name="submit" class=" btn btn-primary">Login</button>
+                <br><br>
+
+            </form>
+            <!-- login form ends here -->
+
+        </div>
+
+
     </div>
 </body>
 
