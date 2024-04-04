@@ -15,6 +15,7 @@ $sql = "DELETE FROM tbl_admin WHERE id=$id";
 $res = mysqli_query($conn, $sql);
 
 //check whether sql query executed or not
+// 3. redirect to manage admin page with success/error message
 if ($res == TRUE) {
     //deleted successfully
     // echo "Admin deleted";
@@ -28,7 +29,3 @@ if ($res == TRUE) {
     $_SESSION['delete'] = "<div class='error'>Failed to delete admin</div>";
     header('location:' . SITEURL . 'admin/manage-admin.php');
 }
-
-
-
-// 3. redirect to manage admin page with success/error message
