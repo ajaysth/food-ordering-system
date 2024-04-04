@@ -1,45 +1,51 @@
-
-
-<?php include('partials/menu.php')?>
+<?php include('partials/menu.php') ?>
 
 
 
 
 
-        <!-- main content section starts -->
-        <div class="main-content">
-        <div class="wrapper">
-                <h1>Dashboard</h1>
+<!-- main content section starts -->
+<div class="main-content">
+    <div class="wrapper">
+        <h1>Dashboard</h1>
+        <br><br>
 
-                <div class="col-4 text-center">
-                    <h1>5</h1>
-                    <br>
-                    Categories
-                </div>
+        <?php
+        if (isset($_SESSION['login'])) {
+            echo $_SESSION['login'];
+            unset($_SESSION['login']);
+        }
+        ?>
 
-                <div class="col-4 text-center">
-                    <h1>5</h1>
-                    <br>
-                    Categories
-                </div>
-
-                <div class="col-4 text-center">
-                    <h1>5</h1>
-                    <br>
-                    Categories
-                </div>
-
-                <div class="col-4 text-center">
-                    <h1>5</h1>
-                    <br>
-                    Categories
-                </div>
-                <div class="clearfix"></div>
-                
-
-            </div>
-
+        <div class="col-4 text-center">
+            <h1>5</h1>
+            <br>
+            Categories
         </div>
-        <!-- main content section ends -->
 
- <?php include('partials/footer.php') ?>
+        <div class="col-4 text-center">
+            <h1>5</h1>
+            <br>
+            Categories
+        </div>
+
+        <div class="col-4 text-center">
+            <h1>5</h1>
+            <br>
+            Categories
+        </div>
+
+        <div class="col-4 text-center">
+            <h1>5</h1>
+            <br>
+            Categories
+        </div>
+        <div class="clearfix"></div>
+
+
+    </div>
+
+</div>
+<!-- main content section ends -->
+
+<?php include('partials/footer.php') ?>
