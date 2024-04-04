@@ -121,9 +121,6 @@ if (isset($_POST['submit'])) {
             header('location:' . SITEURL . 'admin/manage-admin.php');
         }
     }
-
-
-    // check whether current or new password match or not
 }
 
 ?>
