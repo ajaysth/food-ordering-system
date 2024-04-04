@@ -18,8 +18,8 @@
                     unset($_SESSION['add']);//removing session messages
                 }
                 ?>
-                <br>
-                <br>
+                <br> 
+                <br>   
 
                 <!-- button to add admin -->
                 <a href="add-admin.php" class="btn-primary">Add Admin</a>
