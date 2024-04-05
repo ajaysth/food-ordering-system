@@ -4,11 +4,11 @@
 
 <div class="main-content">
     <div class="wrapper">
-    <h1>Manage Food</h1>
+    <h1>Manage Order</h1>
     <br>
 
 <!-- button to add admin -->
-<a href="" class="btn-primary">Add Food</a>
+<a href="" class="btn-primary">Add Order</a>
 <br>
 <br>
 
