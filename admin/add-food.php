@@ -6,6 +6,14 @@
         <h1>Add Food</h1>
         <br><br>
 
+        <?php
+        if (isset($_SESSION['upload'])) {
+            echo $_SESSION['upload'];
+            unset($_SESSION['upload']);
+        }
+
+        ?>
+
         <form action="" method="POST" enctype="multipart/form-data">
             <table class="tbl-30">
                 <tr>
@@ -155,16 +163,15 @@
                     $upload = move_uploaded_file($src, $dst);
 
                     // check whether image is uploaded or not
-                    if($upload==FALSE){
+                    if ($upload == FALSE) {
                         // failed to upload image
                         // redirect to manage food page with message
-                        $_SESSION['upload']="<div class"
+                        $_SESSION['upload'] = "<div class='error'>Failed to upload image</div>";
+                        header('location:' . SITEURL . 'admin/add-food.php');
                         // stop the process
 
 
                     }
-
-                    
                 }
             } else {
                 $image_name = ""; //setting default value ad blank
@@ -172,6 +179,30 @@
 
 
             // 3. insert data in to database
+            // query to insert data in database
+            $sql2 = "INSERT INTO tbl_food SET
+            title='$title',
+            description='$description',
+            price=$price,
+            image_name='$image_name',
+            category_id=$category,
+            featured='$featured',
+            active='$active'
+            ";
+            // execute the query
+            $res2 = mysqli_query($conn, $sql2);
+
+            // check whether query is executed or not
+            if ($res == TRUE) {
+                // redirect to manage food page with success message
+                $_SESSION['add'] = "<div class='success'>Food added successfully</div>";
+                header('location:' . SITEURL . 'admin/manage-food.php');
+            } else {
+                // error message
+                $_SESSION['add'] = "<div class='error'>Failed to add food</div>";
+                header('location:' . SITEURL . 'admin/manage-food.php');
+            }
+
 
             // 4. redirect to manage food page with message
         }
