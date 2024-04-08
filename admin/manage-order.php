@@ -14,10 +14,10 @@
         }
         ?>
 
-        <br><br>
 
-        <!-- button to add admin -->
-        <a href="" class="btn-primary">Add Order</a>
+
+        <!-- button to add admin
+        <a href="" class="btn-primary">Add Order</a> -->
         <br>
         <br>
 
