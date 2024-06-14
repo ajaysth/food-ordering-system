@@ -10,5 +10,6 @@
         <!-- footer section ends -->
 
 
+        <script src="<?php echo SITEURL;?>admin/javascript/admin.js"></script>
     </body>
 </html>

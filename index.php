@@ -81,6 +81,9 @@ if (isset($_SESSION['order'])) {
 
         ?>
 
+        <p class="text-center">
+            <a href="<?php echo SITEURL; ?>categories.php">See All Categories</a>
+        </p>
 
 
 
@@ -184,7 +187,7 @@ if (isset($_SESSION['order'])) {
     </div>
 
     <p class="text-center">
-        <a href="#">See All Foods</a>
+        <a href="<?php echo SITEURL; ?>foods.php">See All Foods</a>
     </p>
 </section>
 <!-- fOOD Menu Section Ends Here -->

@@ -15,6 +15,13 @@
         ?>
 
 
+<div class="search-box">
+    <button class="btn-search"><i class="fas fa-search"></i></button>
+    <input type="text" class="input-search" placeholder="Type to Search...">
+  </div>
+
+
+
 
         <!-- button to add admin
         <a href="" class="btn-primary">Add Order</a> -->
