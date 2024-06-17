@@ -145,8 +145,7 @@ body {
   height: 30px;
   background-color: rgba(221, 217, 217, 0.996);
   transition: 0.7s ease;
-  
-  
+
   
 }
 
@@ -162,6 +161,5 @@ body {
 .upbar .login .loglink:hover{
   background-color: rgb(7, 208, 104);
   border: 2px solid rgb(7, 208, 104);
-  
   
 }
