@@ -105,7 +105,7 @@ body {
   margin-top: 30px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.5s ease;
   background: rgb(130, 106, 251);
 }
 .form button:hover {
@@ -119,4 +119,49 @@ body {
   .form :where(.gender-option, .gender) {
     row-gap: 15px;
   }
+}
+
+.havacc{
+  text-align: center;
+}
+
+.upbar{
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+}
+.upbar .login{
+  height: 100%;
+  width: 100px;
+  padding-right: 20px;
+  padding-top: 35px;
+  
+  
+  
+}
+.upbar .login .loglink{
+  border: 2px solid rgba(221, 217, 217, 0.996);
+  border-radius: 9px ;
+  height: 30px;
+  background-color: rgba(221, 217, 217, 0.996);
+  transition: 0.7s ease;
+  
+  
+  
+}
+
+.upbar .login .loglink a{
+  text-decoration: none;
+  font-size: 19px;
+  padding-left: 12px;
+  color: rgb(9, 64, 123);
+  
+  
+}
+
+.upbar .login .loglink:hover{
+  background-color: rgb(7, 208, 104);
+  border: 2px solid rgb(7, 208, 104);
+  
+  
 }

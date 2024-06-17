@@ -13,9 +13,26 @@
     <link rel="stylesheet" href="register.css" />
   </head>
   <body>
+
+  
+  
+
+
     <section class="container">
+      
 
     <div class="head">
+        <div class="upbar">
+          <div class="logo">
+            <img src="../logimg/logo.png" alt="Restaurant Logo" class="img-responsive" height="100px" >
+          </div>
+          <div class="login">
+            <div class="loglink">
+              <a href="../login/index.php" class="login">Login</a>
+            </div>
+          </div>
+          
+      </div>
 
     </div>
       <header>Registration Form</header>
@@ -89,7 +106,14 @@
           </div>
         </div>
         <button name="submit">Submit</button>
-      </form>
+
+        <!-- <p>Already have an account?</p><button >
+          <div class="login"><a href="../login/index.php">Login</a></div></button> -->
+
+        <!-- <div class="haveacc">
+            <p>Already have an account?</p><button class="login"><a href="../login/index.php">Login</a></button>
+          </div>
+      </form> -->
     </section>
   </body>
 </html>
