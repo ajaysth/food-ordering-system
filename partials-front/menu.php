@@ -1,4 +1,6 @@
-<?php include('config/constants.php'); ?>
+<?php include('config/constants.php'); 
+include('login-check.php'); 
+?>
 
 
 <!DOCTYPE html>
@@ -38,6 +40,10 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <li>
+                        <a href="login/logout.php" onclick="sure()">Log Out</a>
+                    </li>
+                    
                 </ul>
             </div>
 

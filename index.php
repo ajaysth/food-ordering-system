@@ -3,6 +3,12 @@
 
 
 
+<?php
+        if (isset($_SESSION['login'])) {
+            echo $_SESSION['login'];
+            unset($_SESSION['login']);
+        }
+        ?>
 
 <!-- fOOD sEARCH Section Starts Here -->
 <section class="food-search text-center">
@@ -80,10 +86,8 @@ if (isset($_SESSION['order'])) {
         }
 
         ?>
-
-        <p class="text-center">
-            <a href="<?php echo SITEURL; ?>categories.php">See All Categories</a>
-        </p>
+        <br>
+        
 
 
 
@@ -92,6 +96,10 @@ if (isset($_SESSION['order'])) {
 
         <div class="clearfix"></div>
     </div>
+
+    <p class="text-center">
+            <a href="<?php echo SITEURL; ?>categories.php">See All</a>
+        </p>
 </section>
 <!-- Categories Section Ends Here -->
 

@@ -169,3 +169,13 @@ a.google span{
     }
     
 }
+
+.success{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+}
+.text-center{
+    text-align: center;
+}

@@ -1,6 +1,9 @@
 <?php
-require_once('setup.php');
-$google->revokeToken($_SESSION['token']);
+// include constants.php for siteurl
+include('config/constants.php');
 
-session_destroy();
-header('Location:index.php');
+// destroy the session
+session_destroy(); //unset $_SESSION('user')
+
+// redirect to login page
+header('location:' . SITEURL . 'login/index.php');

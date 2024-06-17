@@ -24,6 +24,8 @@
 </section>
 <!-- footer Section Ends Here -->
 
+<script src="<?php echo SITEURL;?>/javascript/login.js"></script>
+
 </body>
 
 </html>
