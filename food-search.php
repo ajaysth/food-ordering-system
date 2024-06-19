@@ -55,7 +55,7 @@
                         // check whether image name is available or not
                         if ($image_name == "") {
                             // image not available
-                            echo "div class='error'>Image not available.</div>";
+                            echo "<div class='error'>Image not available.</div>";
                         } else {
                             // image available
                         ?>

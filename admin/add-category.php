@@ -22,7 +22,7 @@
 
         <!-- add category form starts here -->
         <form action="" method="POST" enctype="multipart/form-data">
-            <table class="tbl-30">
+            <table class="table" style="margin-top:5px; border-top:1px solid black;">
                 <tr>
                     <td>Title</td>
                     <td>
@@ -33,7 +33,7 @@
                 <tr>
                     <td>Select Image:</td>
                     <td>
-                        <input type="file" name="image">
+                        <input class="form-control" type="file" name="image">
                     </td>
                 </tr>
 
@@ -55,7 +55,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="submit" name="submit" value="Add Category" class="btn-secondary">
+                        <input type="submit" name="submit" value="Add Category" class="btn btn-outline-success">
                     </td>
                 </tr>
 

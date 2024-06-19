@@ -25,17 +25,22 @@
 }
 .tbl-full{
     width: 100%;
+    border-collapse: collapse;
 }
 .tbl-30{
     width: 30%;
+    border-collapse: collapse;
 }
 table tr th{
-    border-bottom:1px solid black ;
-    padding: 1%;
+    border-bottom:3px solid black ;
+    padding: 2%;
     text-align: left;
 }
 table tr td{
-    padding: 1%;
+    padding: 3%;
+    border-right:1px solid black ;
+    border-left:1px solid black ;
+    border-bottom:1px solid black ;
 }
 
 .btn-primary{
@@ -129,6 +134,9 @@ table tr td{
 .footer{
     background-color: #ff4757;
     color: white;
+    bottom: 0;
+    
+    width: 100%;
 }
 
 
@@ -201,4 +209,10 @@ table tr td{
     background-color: transparent;
     border-bottom:1px solid rgba(255,255,255,.5);
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+
+
+  .dark-mode {
+    background-color: black;
+    color: white;
   }

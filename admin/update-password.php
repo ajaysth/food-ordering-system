@@ -17,32 +17,32 @@
 
 
         <form action="" method="POST">
-            <table class="tbl-30">
+            <table class="table table-striped">
                 <tr>
                     <td>Current Password:</td>
                     <td>
-                        <input type="password" name="current_password" placeholder="Enter current password">
+                        <input type="password" class="form-control" name="current_password" placeholder="Enter current password">
                     </td>
                 </tr>
 
                 <tr>
                     <td>New Password:</td>
                     <td>
-                        <input type="password" name="new_password" placeholder="Enter new password">
+                        <input type="password" class="form-control" name="new_password" placeholder="Enter new password">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Confirm Password:</td>
                     <td>
-                        <input type="password" name="confirm_password" placeholder="Enter new password again">
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Enter new password again">
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id ?>">
-                        <input type="submit" name="submit" value="Change Password" class="btn-secondary">
+                        <input type="submit" name="submit" value="Change Password" class="btn btn-outline-success">
 
                     </td>
                 </tr>

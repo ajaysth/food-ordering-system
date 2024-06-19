@@ -14,6 +14,11 @@ include('login-check.php');
 
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    
 </head>
 
 <body>
@@ -42,6 +47,10 @@ include('login-check.php');
                     </li>
                     <li>
                         <a href="login/logout.php" onclick="sure()">Log Out</a>
+                    </li>
+                    <li>
+                        <a href="#" >My Cart(0)</a>
+                        <i class="bi bi-bag-fill"></i>
                     </li>
                     
                 </ul>

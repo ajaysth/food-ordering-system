@@ -60,6 +60,7 @@ a:hover{
     background-color: #bccab7;
     color: rgb(216, 43, 43);
     cursor: pointer;
+    transition: 0.7s ease;
 }
 .btn-primary:hover{
     color: white;

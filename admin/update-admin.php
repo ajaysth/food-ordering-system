@@ -39,7 +39,7 @@
 
 
         <form action="" method="POST">
-            <table class="tbl-30">
+            <table class="table table-striped">
                 <tr>
                     <td>Full Name</td>
                     <td><input type="text" name="full_name" value="<?php echo $full_name ?>"></td>
@@ -51,7 +51,7 @@
                 <tr>
                     <td colspan="2">
                         <input type="hidden" name="id" value="<?php echo $id ?>">
-                        <input type="submit" name="submit" value="Update Admin" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Admin" class="btn btn-outline-secondary">
                     </td>
                 </tr>
             </table>

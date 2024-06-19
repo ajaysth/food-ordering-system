@@ -46,7 +46,7 @@
         ?>
 
         <form action="" method="POST">
-            <table class="tbl_30">
+            <table class="table table-striped">
                 <tr>
                     <td>Food Name</td>
                     <td><b><?php echo $food; ?></b></td>
@@ -60,14 +60,14 @@
                 <tr>
                     <td>Qty</td>
                     <td>
-                        <input type="number" name="qty" value="<?php echo $qty; ?>">
+                        <input class="form-control" type="number" name="qty" value="<?php echo $qty; ?>">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Status</td>
                     <td>
-                        <select name="status">
+                        <select class="form-select" name="status">
                             <option <?php if ($status == "Ordered") {
                                         echo "selected";
                                     } ?> value=")rdered">Ordered</option>
@@ -108,7 +108,7 @@
                 <tr>
                     <td>Customer Address:</td>
                     <td>
-                        <textarea name="customer_address" cols="30" rows="5"><?php echo $customer_address; ?></textarea>
+                        <textarea class="form-control" name="customer_address" cols="30" rows="5"><?php echo $customer_address; ?></textarea>
                     </td>
                 </tr>
 
@@ -117,7 +117,7 @@
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="hidden" name="price" value="<?php echo $price; ?>">
 
-                        <input type="submit" name="submit" value="Update Order" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Order" class="btn btn-outline-success">
                     </td>
                 </tr>
 

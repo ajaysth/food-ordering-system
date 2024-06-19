@@ -47,7 +47,7 @@
         <br>
         <br>
 
-        <table class="tbl-full">
+        <table class="table table-striped" style="border-collapse: collapse;">
             <tr>
                 <th>S.N</th>
                 <th>Full Name</th>
@@ -90,9 +90,9 @@
                             <td><?php echo $full_name ?></td>
                             <td><?php echo $username ?></td>
                             <td>
-                                <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
-                                <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update</a>
-                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn btn-outline-success">Change Password</a>
+                                <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn btn-outline-secondary">Update</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn btn-outline-danger">Delete</a>
 
                             </td>
                         </tr>

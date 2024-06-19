@@ -6,3 +6,9 @@ function sure(){
         document.write("logout failed");
     }
 }
+
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}

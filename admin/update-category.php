@@ -41,7 +41,7 @@
         ?>
 
         <form action="" method="POST" enctype="multipart/form-data">
-            <table class="tbl-30">
+            <table class="table table-striped">
                 <tr>
                     <td>Title:</td>
                     <td>
@@ -70,17 +70,17 @@
                 <tr>
                     <td>New Image</td>
                     <td>
-                        <input type="file" name="image">
+                        <input class="form-control" type="file" name="image">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Featured:</td>
                     <td>
-                        <input <?php if ($featured == "Yes") {
+                        <input class="form-check-input" <?php if ($featured == "Yes") {
                                     echo "checked";
                                 } ?> type="radio" name="featured" value="Yes">Yes
-                        <input <?php if ($featured == "No") {
+                        <input class="form-check-input" <?php if ($featured == "No") {
                                     echo "checked";
                                 } ?> type="radio" name="featured" value="No">No
                     </td>
@@ -89,10 +89,10 @@
                 <tr>
                     <td>Active:</td>
                     <td>
-                        <input <?php if ($active == "Yes") {
+                        <input class="form-check-input" <?php if ($active == "Yes") {
                                     echo "checked";
                                 } ?> type="radio" name="active" value="Yes">Yes
-                        <input <?php if ($active == "No") {
+                        <input class="form-check-input" <?php if ($active == "No") {
                                     echo "checked";
                                 } ?> type="radio" name="active" value="No">No
                     </td>
@@ -102,7 +102,7 @@
                     <td colspan="2">
                         <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <input type="submit" name="submit" value="Update Category" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Category" class="btn btn-outline-success">
                     </td>
                 </tr>
 

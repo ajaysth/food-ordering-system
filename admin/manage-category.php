@@ -52,7 +52,17 @@
         <br>
         <br>
 
-        <table class="tbl-full">
+        <!-- <div class="container mt-5">
+        <div class="form-group position-relative">
+            <input type="text" class="form-control" placeholder="Search..." onkeyup="showRecommendations(this.value)">
+            <div id="recommendations"></div>
+        </div>
+        <div id="item-details" class="mt-3"></div>
+    </div> -->
+
+    <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name"> -->
+
+        <table class="table table-striped" style="border-collapse: collapse;">
             <tr>
                 <th>S.N</th>
                 <th>Title</th>
@@ -98,7 +108,7 @@
                             if ($image_name != "") {
                                 // display image
                             ?>
-                                <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" width="100px">
+                                <img class="rounded mx-auto d-block" src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" width="100px">
                             <?php
 
                             } else {
@@ -110,8 +120,8 @@
                         <td><?php echo $featured ?></td>
                         <td><?php echo $active ?></td>
                         <td>
-                            <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn-secondary">Update</a>
-                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete</a>
+                            <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn btn-outline-secondary">Update</a>
+                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn btn-outline-danger">Delete</a>
 
                         </td>
                     </tr>
@@ -137,6 +147,27 @@
         </table>
     </div>
 </div>
+
+
+
+<!-- <script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script> -->
 
 
 <?php include('partials/footer.php') ?>

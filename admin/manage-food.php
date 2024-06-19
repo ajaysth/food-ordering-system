@@ -12,6 +12,8 @@
         <br>
         <br>
 
+        
+
         <?php
         if (isset($_SESSION['add'])) {
             echo $_SESSION['add'];
@@ -41,7 +43,9 @@
 
         ?>
 
-        <table class="tbl-full">
+
+
+        <table class="table table-striped" style="border-collapse: collapse;">
             <tr>
                 <th>S.N</th>
                 <th>Title</th>
@@ -104,8 +108,8 @@
                         <td><?php echo $featured ?></td>
                         <td><?php echo $active ?></td>
                         <td>
-                            <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id; ?>" class="btn-secondary">Update</a>
-                            <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name ?>" class="btn-danger">Delete</a>
+                            <a href="<?php echo SITEURL; ?>admin/update-food.php?id=<?php echo $id; ?>" class="btn btn-outline-success">Update</a>
+                            <a href="<?php echo SITEURL; ?>admin/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name ?>" class="btn btn-outline-danger">Delete</a>
 
                         </td>
                     </tr>

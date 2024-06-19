@@ -3,7 +3,7 @@
 
 
 <div class="main-content">
-    <div class="wrapper">
+    <div class="wrapper" style="width:96%">
         <h1>Manage Order</h1>
         <br><br><br>
 
@@ -15,11 +15,15 @@
         ?>
 
 
-<div class="search-box">
-    <button class="btn-search"><i class="fas fa-search"></i></button>
-    <input type="text" class="input-search" placeholder="Type to Search...">
-  </div>
+<div class="search-container">
+        <form action="javascript:void(0);" method="get">
+            <input type="text" placeholder="Search.." onkeyup="showRecommendations(this.value)" name="query">
+            <button type="submit">Search</button>
+        </form>
+        <div id="recommendations"></div>
+        <div id="item-details"></div>
 
+        </div>
 
 
 
@@ -28,20 +32,20 @@
         <br>
         <br>
 
-        <table class="tbl-full">
-            <tr>
-                <th>S.N</th>
-                <th>Food</th>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>Total</th>
-                <th>order Date</th>
-                <th>Status</th>
-                <th>Customer Name</th>
-                <th>Contact</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Actions</th>
+        <table class="table table-striped">
+            <tr >
+                <th >S.N</th>
+                <th >Food</th>
+                <th >Price</th>
+                <th >Qty</th>
+                <th >Total</th>
+                <th >order Date</th>
+                <th >Status</th>
+                <th >Customer Name</th>
+                <th >Contact</th>
+                <th >Email</th>
+                <th >Address</th>
+                <th >Actions</th>
             </tr>
 
             <?php
@@ -72,12 +76,12 @@
             ?>
 
                     <tr>
-                        <td><?php echo $sn++; ?></td>
-                        <td><?php echo $food; ?></td>
-                        <td><?php echo $price; ?></td>
-                        <td><?php echo $qty; ?></td>
-                        <td><?php echo $total; ?></td>
-                        <td><?php echo $order_date; ?></td>
+                        <td style="padding-left:3px;"><?php echo $sn++; ?></td>
+                        <td style="padding-left:3px;"><?php echo $food; ?></td>
+                        <td style="padding-left:3px;"><?php echo $price; ?></td>
+                        <td style="padding-left:3px;"><?php echo $qty; ?></td>
+                        <td style="padding-left:3px;"><?php echo $total; ?></td>
+                        <td style="padding-left:3px;"><?php echo $order_date; ?></td>
                         <!-- <td>
                             <?php
                             // ordered, On delivery, Delivered, Canceled
@@ -93,14 +97,14 @@
                             ?>
                         </td> -->
 
-                        <td><?php echo $status; ?></td>
-                        <td><?php echo $customer_name; ?></td>
-                        <td><?php echo $customer_contact; ?></td>
-                        <td><?php echo $customer_email; ?></td>
-                        <td><?php echo $customer_address; ?></td>
-                        <td>
-                            <a href="<?php echo SITEURL; ?>admin/update-order.php?id=<?php echo $id; ?>" class="btn-secondary">Update</a>
-                            <a href="" class="btn-danger">Delete</a>
+                        <td style="padding-left:3px;"><?php echo $status; ?></td>
+                        <td style="padding-left:3px;"><?php echo $customer_name; ?></td>
+                        <td style="padding-left:3px;"><?php echo $customer_contact; ?></td>
+                        <td style="padding-left:3px;"><?php echo $customer_email; ?></td>
+                        <td style="padding-left:3px;"><?php echo $customer_address; ?></td>
+                        <td style="padding-left:3px;">
+                            <a href="<?php echo SITEURL; ?>admin/update-order.php?id=<?php echo $id; ?>" class="btn btn-outline-secondary">Update</a>
+                            <a href="" class="btn btn-outline-danger">Delete</a>
 
                         </td>
                     </tr>
@@ -122,7 +126,50 @@
     </div>
 </div>
 
+<!-- <script>
+        function showRecommendations(str) {
+            if (str.length == 0) {
+                document.getElementById("recommendations").innerHTML = "";
+                return;
+            }
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("recommendations").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "recommend.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    </script> -->
 
+<script>
+    function showRecommendations(str) {
+            if (str.length == 0) {
+                document.getElementById("recommendations").innerHTML = "";
+                return;
+            }
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("recommendations").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "recommend.php?q=" + str, true);
+            xmlhttp.send();
+        }
+
+        function showItemDetails(item) {
+            const xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("item-details").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "item-details.php?item=" + item, true);
+            xmlhttp.send();
+        }
+    </script>
 
 
 

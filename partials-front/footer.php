@@ -20,6 +20,8 @@
 <section class="footer">
     <div class="container text-center">
         <p>All rights reserved. Designed By <a href="#">Sophiya&Ajay</a></p>
+        <p>Contact us at: +977985555555</p>
+        <p>foodey@gmail.com</p>
     </div>
 </section>
 <!-- footer Section Ends Here -->

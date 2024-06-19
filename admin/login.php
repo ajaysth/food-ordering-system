@@ -9,6 +9,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/login.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" > -->
 </head>
 
 <body>
@@ -34,16 +35,16 @@
             <form action="" method="POST" class="text-center">
                 <label for="">Username:</label><br>
 
-                <input type="text" name="username" placeholder="Enter your username"><br><br>
+                <input class="form-control" type="text" name="username" placeholder="Enter your username"><br><br>
 
 
                 <label for="">Password:</label><br>
 
-                <input type="password" name="password" placeholder="Enter your password"><br><br>
+                <input class="form-control" type="password" name="password" placeholder="Enter your password"><br><br>
 
 
                 <!-- <input type="submit" name="submit" value="Login" class="btn-primary"> -->
-                <button name="submit" class=" btn btn-primary">Login</button>
+                <button name="submit" class="btn btn-primary">Login</button>
                 <br><br>
 
             </form>

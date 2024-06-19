@@ -9,7 +9,18 @@ include('login-check.php');
 
 <head>
     <title>Food Ordering System-Homepage</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/order.css">
+
+    <!-- <style>
+        .dark-mode {
+    background-color: black;
+    color: white;
+  }
+    </style> -->
+    
 </head>
 
 <body>
@@ -24,6 +35,7 @@ include('login-check.php');
                 <li><a href="manage-order.php">Order</a></li>
 
                 <li><a href="logout.php" onclick="sure()">Logout</a></li>
+                <button onclick="myFunction()">Toggle dark mode</button>
             </ul>
 
 

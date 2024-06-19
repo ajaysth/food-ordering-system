@@ -16,7 +16,7 @@
 
     <form action="" method="POST">
 
-      <table class="tbl-30">
+      <table class="table table-striped" >
         <tr>
           <td>Full Name</td>
           <td><input type="text" name="full_name" placeholder="Enter your fullname"></td>
@@ -29,12 +29,12 @@
 
         <tr>
           <td>Password</td>
-          <td><input type="password" name="password" placeholder="Enter your password"></td>
+          <td><input type="password" class="form-control" name="password" placeholder="Enter your password"></td>
         </tr>
 
         <tr>
           <td colspan="2">
-            <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
+            <input type="submit" name="submit" value="Add Admin" class="btn btn-outline-success">
           </td>
         </tr>
       </table>

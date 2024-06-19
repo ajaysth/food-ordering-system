@@ -2,6 +2,7 @@
 
 
 <?php
+ob_start();
 // check whether id is set or not
 if (isset($_GET['id'])) {
     // get all the details
@@ -40,7 +41,7 @@ if (isset($_GET['id'])) {
 
 
         <form action="" method="POST" enctype="multipart/form-data">
-            <table class="tbl-30">
+            <table class="table table-striped">
                 <tr>
                     <td>Title</td>
                     <td>
@@ -51,14 +52,14 @@ if (isset($_GET['id'])) {
                 <tr>
                     <td>Description</td>
                     <td>
-                        <textarea name="description" cols="30" rows="5"><?php echo $description ?></textarea>
+                        <textarea class="form-control" name="description" cols="30" rows="5"><?php echo $description ?></textarea>
                     </td>
                 </tr>
 
                 <tr>
                     <td>Price</td>
                     <td>
-                        <input type="number" name="price" value="<?php echo $price ?>">
+                        <input class="form-control" type="number" name="price" value="<?php echo $price ?>">
                     </td>
                 </tr>
 
@@ -85,14 +86,14 @@ if (isset($_GET['id'])) {
                 <tr>
                     <td>Select new image</td>
                     <td>
-                        <input type="file" name="image">
+                        <input class="form-control" type="file" name="image">
                     </td>
                 </tr>
 
                 <tr>
                     <td>Category</td>
                     <td>
-                        <select name="category">
+                        <select class="form-select" name="category">
 
                             <?php
 
@@ -132,10 +133,10 @@ if (isset($_GET['id'])) {
                 <tr>
                     <td>Featured</td>
                     <td>
-                        <input <?php if ($featured == "Yes") {
+                        <input class="form-check-input" <?php if ($featured == "Yes") {
                                     echo "checked";
                                 } ?> type="radio" name="featured" value="Yes">Yes
-                        <input <?php if ($featured == "No") {
+                        <input class="form-check-input" <?php if ($featured == "No") {
                                     echo "checked";
                                 } ?> type="radio" name="featured" value="No">No
                     </td>
@@ -144,10 +145,10 @@ if (isset($_GET['id'])) {
                 <tr>
                     <td>Active</td>
                     <td>
-                        <input <?php if ($active == "Yes") {
+                        <input class="form-check-input" <?php if ($active == "Yes") {
                                     echo "checked";
                                 } ?> type="radio" name="active" value="Yes">Yes
-                        <input <?php if ($active == "No") {
+                        <input class="form-check-input" <?php if ($active == "No") {
                                     echo "checked";
                                 } ?> type="radio" name="active" value="No">No
                     </td>
@@ -157,7 +158,7 @@ if (isset($_GET['id'])) {
                     <td>
                         <input type="hidden" name="id" value="<?php echo $id; ?>">
                         <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
-                        <input type="submit" name="submit" value="Update Food" class="btn-secondary">
+                        <input type="submit" name="submit" value="Update Food" class="btn btn-outline-success">
                     </td>
                 </tr>
 
@@ -191,9 +192,9 @@ if (isset($_GET['id'])) {
                     // image is available
                     // a. uploading new image
 
-
+                    $tmp=explode('.', $image_name);
                     // rename the image
-                    $ext = end(explode('.', $image_name)); // get the extension of image
+                    $ext = end($tmp); // get the extension of image
 
                     $image_name = "Food-Name-" . rand(000, 999) . '.' . $ext; //new image name
 
@@ -264,6 +265,7 @@ if (isset($_GET['id'])) {
                 // query executed and food updated
                 $_SESSION['update'] = "<div class='success'>Food updated successfully.</div>";
                 header('location:' . SITEURL . 'admin/manage-food.php');
+                ob_end_flush();
             } else {
                 // failed to update food
                 $_SESSION['update'] = "<div class='error'>Failed to update food.</div>";
