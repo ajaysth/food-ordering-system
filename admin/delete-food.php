@@ -26,7 +26,7 @@ if (isset($_GET['id']) and isset($_GET['image_name'])) {
         // check whether the image is removed or not
         if ($remove == FALSE) {
             // failed to delete image
-            $_SESSION['upload'] = "<div class='error'>Failed t0 remove image.</div>";
+            $_SESSION['upload'] = "<div class='error text-center'>Failed t0 remove image.</div>";
             // redirect to manage food
             header('location:' . SITEURL . 'admin/manage-food.php');
             // stop the process
@@ -42,16 +42,16 @@ if (isset($_GET['id']) and isset($_GET['image_name'])) {
     // check whether query is executed or not and set session message
     if ($res == TRUE) {
         // food deleted
-        $_SESSION['delete'] = "<div class='success'>Food deleted successfully.</div>";
+        $_SESSION['delete'] = "<div class='success text-center'>Food deleted successfully.</div>";
         header('location:' . SITEURL . 'admin/manage-food.php');
     } else {
         // failed to delete food
-        $_SESSION['delete'] = "<div class='error'>Failed to delete food.</div>";
+        $_SESSION['delete'] = "<div class='error text-center'>Failed to delete food.</div>";
         header('location:' . SITEURL . 'admin/manage-food.php');
     }
 } else {
     // redirect to manage food page
     // echo "redirect";
-    $_SESSION['unauthorize'] = "<div class='error'>Unauthorized Access</div>";
+    $_SESSION['unauthorize'] = "<div class='error text-center'>Unauthorized Access</div>";
     header('location:' . SITEURL . 'admin/manage-food.php');
 }

@@ -1,9 +1,8 @@
-<?php
-include 'dbconfig.php';
+<?php include('partials-front/menu.php'); 
 if( $_SERVER['REQUEST_METHOD'] == 'POST')
 {
 	$product_id = $_POST['product_id'];
-	$sql = "SELECT * FROM products WHERE id='$product_id'";
+	$sql = "SELECT * FROM tbl_order WHERE id='$product_id'";
 	$result = mysqli_query($conn, $sql);
 	if($result)
 	{
@@ -66,11 +65,11 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST')
 										<input value="http://tandubhai.com/esewa/esewa_payment_failed.php" type="hidden" name="fu">
 										<input type="image" src="image/esewa.png">
 										</li>
-										<li class="list-group-item"><input type="image" src="image/fonepay.png"></li>
+										<!-- <li class="list-group-item"><input type="image" src="image/fonepay.png"></li>
 										<li class="list-group-item"><input type="image" src="image/khalti.png"></li>
 										<li class="list-group-item"><input type="image" src="image/connectips.png"></li>
 										<li class="list-group-item"><input type="image" src="image/hbl.png"></li>
-									</ul>
+									</ul> -->
 								</div>
 								
 							</div>

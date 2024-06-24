@@ -17,6 +17,7 @@ if (isset($_GET['code'])) {
     $google_account_info = $google_oauth->userinfo->get();
     $email = $google_account_info->email;
     $name = $google_account_info->name;
+    $address = $google_account_info->address;
 
     // Here you could authenticate the user in your system or create a new account
 

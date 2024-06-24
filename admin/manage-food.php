@@ -4,7 +4,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Manage Food</h1>
+        <h1 class="fs-1 text-center" >Manage Food</h1>
         <br>
 
         <!-- button to add admin -->

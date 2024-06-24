@@ -5,13 +5,14 @@
     <div class="container">
 
         <?php
+        
         // get the search keyword
         $search = $_POST['search'];
 
 
         ?>
 
-        <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
+        <h2>Foods on Your Search <a href="#" class="text-white" style="text-decoration:none;">"<?php echo $search; ?>"</a></h2>
 
     </div>
 </section>
@@ -26,6 +27,7 @@
 
 
         <?php
+        
 
         // query to get food based on search keyword
         $sql = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%' ";
@@ -45,8 +47,10 @@
                 $price = $row['price'];
                 $description = $row['description'];
                 $image_name = $row['image_name'];
+                
 
         ?>
+        
 
                 <div class="food-menu-box">
                     <div class="food-menu-img">

@@ -13,6 +13,8 @@ include('login-check.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
     <!-- <style>
         .dark-mode {
@@ -28,15 +30,18 @@ include('login-check.php');
     <div class="menu text-center">
         <div class="wrapper">
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="manage-admin.php">Admin Manager</a></li>
-                <li><a href="manage-category.php">Category</a></li>
-                <li><a href="manage-food.php">Food</a></li>
-                <li><a href="manage-order.php">Order</a></li>
+                <li><a class="fs-5" href="index.php">Home</a></li>
+                <!-- <li><a class="fs-5" href="manage-admin.php">Admin Manager</a></li> -->
+                <li><a class="fs-5" href="manage-user.php">User Manager</a></li>
+                <li><a class="fs-5" href="manage-category.php">Category</a></li>
+                <li><a class="fs-5" href="manage-food.php">Food</a></li>
+                <li><a class="fs-5" href="manage-order.php">Order</a></li>
 
-                <li><a href="logout.php" onclick="sure()">Logout</a></li>
-                <button onclick="myFunction()">Toggle dark mode</button>
+                <li><a class=" fs=4 btn btn-danger"  style=" position:absolute; right: 5px" href="logout.php" onclick="sure()"><i class="fa fa-sign-out" style="color: white; " aria-hidden="true"></i></a></li>
+                
             </ul>
+
+            
 
 
         </div>

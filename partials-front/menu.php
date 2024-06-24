@@ -1,5 +1,5 @@
-<?php include('config/constants.php'); 
-include('login-check.php'); 
+<?php include('config/constants.php');
+include('login-check.php');
 ?>
 
 
@@ -15,44 +15,48 @@ include('login-check.php');
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
 
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-    
+
 </head>
 
 <body>
     <!-- Navbar Section Starts Here -->
-    <section class="navbar">
+    <section class="navibar">
         <div class="container">
             <div class="logo">
-                <a href="#" title="Logo">
+                <a href="<?php echo SITEURL; ?>" title="Logo">
                     <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
                 </a>
             </div>
 
-            <div class="menu text-right">
+            <div class="menu text-right fs-3">
                 <ul>
                     <li>
-                        <a href="<?php echo SITEURL; ?>">Home</a>
+                        <a class="text-uppercase fs-5" style="text-decoration: none; font-family: 'Comic Sans MS', cursive, sans-serif;" href="<?php echo SITEURL; ?>">Home</a>
                     </li>
                     <li>
-                        <a href="<?php echo SITEURL; ?>categories.php">Categories</a>
+                        <a class="text-uppercase fs-5" style="text-decoration: none; font-family: 'Comic Sans MS', cursive, sans-serif;" href="<?php echo SITEURL; ?>category.php">Categories</a>
                     </li>
                     <li>
-                        <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
+                        <a class="text-uppercase fs-5" style="text-decoration: none; font-family: 'Comic Sans MS', cursive, sans-serif;" href="<?php echo SITEURL; ?>food.php">Foods</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a class="text-uppercase fs-5" style="text-decoration: none; font-family: 'Comic Sans MS', cursive, sans-serif;" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a href="login/logout.php" onclick="sure()">Log Out</a>
+                        <a class="text-uppercase fs-5 btn btn-danger" style="text-decoration: none; font-family: 'Comic Sans MS', cursive, sans-serif;" href="login/logout.php" onclick="sure()"> <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        
                     </li>
-                    <li>
-                        <a href="#" >My Cart(0)</a>
+                    <!-- <li>
+                        <a class="text-uppercase" style="text-decoration: none;" href="#" >My Cart(0)</a>
                         <i class="bi bi-bag-fill"></i>
-                    </li>
-                    
+                    </li> -->
+
                 </ul>
             </div>
 

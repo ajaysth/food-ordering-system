@@ -19,7 +19,7 @@ if (isset($_GET['id']) and isset($_GET['image_name'])) {
         // if failed to remove the image display error message and stop the process
         if ($remove == FALSE) {
             // set the session message
-            $_SESSION['remove'] = "<div class='error'>Failed to remove category image</div>";
+            $_SESSION['remove'] = "<div class='error text-center'>Failed to remove category image</div>";
             // redirect to manage category page
             header('location:' . SITEURL . 'admin/manage-category.php');
 
@@ -38,12 +38,12 @@ if (isset($_GET['id']) and isset($_GET['image_name'])) {
     // check whether query is executed or not
     if ($res == TRUE) {
         // set success message and redirect
-        $_SESSION['delete'] = "<div class='success'>Category deleted successfully</div>";
+        $_SESSION['delete'] = "<div class='success text-center'>Category deleted successfully</div>";
         // redirect to manage admin page
         header('location:' . SITEURL . 'admin/manage-category.php');
     } else {
         // set fail message and redirect
-        $_SESSION['delete'] = "<div class='erroe'>Failed to delete category</div>";
+        $_SESSION['delete'] = "<div class='error text-center'>Failed to delete category</div>";
         // redirect to manage admin page
         header('location:' . SITEURL . 'admin/manage-category.php');
     }

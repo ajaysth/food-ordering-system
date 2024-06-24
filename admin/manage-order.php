@@ -4,7 +4,7 @@
 
 <div class="main-content">
     <div class="wrapper" style="width:96%">
-        <h1>Manage Order</h1>
+        <h1 class="fs-1 text-center">Manage Order</h1>
         <br><br><br>
 
         <?php
@@ -114,7 +114,7 @@
                 }
             } else {
                 // order not available
-                echo "<tr><td colspan='12' class='error'>Orders not available</td></tr>";
+                echo "<tr><td colspan='12' class='error text-center'>Orders not available</td></tr>";
             }
 
 

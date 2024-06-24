@@ -1,0 +1,12 @@
+{
+    "name": "hp/foodorder",
+    "description": "a project for exporting food ordering details in pdf and excel",
+    "require": {
+        "tecnickcom/tcpdf": "^6.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hp\\Foodorder\\": "src/"
+        }
+    }
+}

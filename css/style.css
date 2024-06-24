@@ -36,14 +36,15 @@
     clear: both;
     float: none;
 }
-
 a{
     color: #0923e6dc;
     text-decoration: none;
+    font-size: 17px;
     /* transition:  transform 0.9s ; */
     transition: 0.7s ease;
-
 }
+
+
 a:hover{
     color: #ff4757;
     text-decoration: none;
@@ -51,9 +52,9 @@ a:hover{
 }
 
 .btn{
-    padding: 1%;
+    padding: 2%;
     border: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border-radius: 5px;
 }
 .btn-primary{

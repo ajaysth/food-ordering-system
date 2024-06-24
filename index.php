@@ -14,9 +14,9 @@
 <section class="food-search text-center">
     <div class="container">
 
-        <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
-            <input type="search" name="search" placeholder="Search for Food.." required>
-            <input type="submit" name="submit" value="Search" class="btn btn-primary">
+        <form action="<?php echo SITEURL; ?>foods-search.php" method="POST">
+            <input type="search" name="search" placeholder="Search for Food.."  required >
+            <input type="submit" class="btn btn-warning btn-lg" name="submit" value="Search" class="btn btn-primary">
         </form>
 
     </div>
@@ -29,6 +29,12 @@ if (isset($_SESSION['order'])) {
     unset($_SESSION['order']);
 }
 
+if (isset($_SESSION['transaction'])) {
+    echo $_SESSION['transaction'];
+    unset($_SESSION['transaction']);
+}
+
+
 ?>
 
 
@@ -36,12 +42,15 @@ if (isset($_SESSION['order'])) {
 <!-- CAtegories Section Starts Here -->
 <section class="categories">
     <div class="container">
-        <h2 class="text-center">Explore Foods</h2>
+        <h1 class=" my-4 text-center" style="font-weight: bold;">Explore Categories</h1>
+        <br>
+
+        <h2 class="text-center text-success" style="font: size 18px;">Available categories</h2>
 
 
         <?php
         // create sql queries to display categories from database
-        $sql = "SELECT * FROM tbl_category WHERE active='Yes' AND featured='Yes' LIMIT 3";
+        $sql = "SELECT * FROM tbl_category WHERE active='Yes' AND featured='Yes' LIMIT 4";
         // execute the query
         $res = mysqli_query($conn, $sql);
         // count rows to check whether the category is available or not
@@ -55,7 +64,7 @@ if (isset($_SESSION['order'])) {
                 $title = $row['title'];
                 $image_name = $row['image_name'];
         ?>
-                <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id; ?>">
+                <a href="<?php echo SITEURL; ?>category-specific.php?category_id=<?php echo $id; ?>&title=<?php echo urlencode($row['title']); ?>">
                     <div class="box-3 float-container">
                         <?php
                         // check whether image is available or not
@@ -65,7 +74,7 @@ if (isset($_SESSION['order'])) {
                         } else {
                             // image available
                         ?>
-                            <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza" class="img-responsive img-curve">
+                            <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" alt="Pizza"  class="img-responsive img-curve">
 
                         <?php
                         }
@@ -98,111 +107,95 @@ if (isset($_SESSION['order'])) {
     </div>
 
     <p class="text-center">
-            <a href="<?php echo SITEURL; ?>categories.php">See All</a>
+            <a class="btn btn-outline-info" href="<?php echo SITEURL; ?>category.php">See All Categories</a>
         </p>
 </section>
 <!-- Categories Section Ends Here -->
 
 
 
+<!-- food section starts here -->
+<?php  
+
+$sql = "SELECT id, title, price, image_name FROM tbl_food LIMIT 3"  ;
+$result = $conn->query($sql);
 
 
+// Handle add to cart
+if (isset($_POST['add_to_cart'])) {
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $price = $_POST['price'];
+    $image_name = $_POST['image_name'];
+    // $image_path = $_POST['image_path'];
 
-<!-- fOOD MEnu Section Starts Here -->
-<section class="food-menu">
-    <div class="container">
-        <h2 class="text-center">Food Menu</h2>
+    // Check if the item is already in the cart
+    $found = false;
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = [];
+    }
+    foreach ($_SESSION['cart'] as &$cart_item) {
+        if ($cart_item['id'] == $id) {
+            $cart_item['quantity'] += 1;
+            $found = true;
+            break;
+        }
+    }
 
-        <?php
+    // If item not found in cart, add new item
+    if (!$found) {
+        $_SESSION['cart'][] = [
+            'id' => $id,
+            'title' => $title,
+            'price' => $price,
+            'image_name' => $image_name,
+            'quantity' => 1
+        ];
+    }
 
-        // getting foods from database that are active and featured
-        // query
-        $sql2 = "SELECT * FROM tbl_food WHERE active='Yes' AND featured='Yes' LIMIT 6";
-        // execute the query
-        $res2 = mysqli_query($conn, $sql2);
+    // Redirect to avoid form resubmission
+    header("Location: food.php");
+    exit();
+}
+?>
 
-        // count rows
-        $count2 = mysqli_num_rows($res2);
 
-        // check whether food available or not
-        if ($count2 > 0) {
-            // food available
-            while ($row = mysqli_fetch_assoc($res2)) {
-                // get all the value
-                $id = $row['id'];
-                $title = $row['title'];
-                $price = $row['price'];
-                $description = $row['description'];
-                $image_name = $row['image_name'];
-        ?>
-
-                <div class="food-menu-box">
-                    <div class="food-menu-img">
-
-                        <?php
-                        // check whether image available or not
-                        if ($image_name == "") {
-                            // image not available
-                            echo "<div class='error'>Image not available.</div>";
-                        } else {
-                            // image available
-
-                        ?>
-                            <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
-                        <?php
-                        }
-
-                        ?>
-
-                    </div>
-
-                    <div class="food-menu-desc">
-                        <h4>
-                            <?php echo $title; ?>
-                        </h4>
-                        <p class="food-price"><?php echo $price; ?></p>
-                        <p class="food-detail">
-                            <?php echo $description; ?>
-                        </p>
-                        <br>
-
-                        <a href="<?php echo SITEURL; ?>order.php?food_id=<?php echo $id; ?>" class="btn btn-primary">Order Now</a>
+<div class="container">
+    <h1 class="my-4 text-center" style="font-weight: bold;">Explore Foods</h1>
+    <div class="row">
+        <?php if ($result->num_rows > 0): ?>
+            <?php while($row = $result->fetch_assoc()): ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="images/food/<?php echo $row['image_name']; ?>"  class="card-img-top" style="max-height: 400px; object-fit: cover;" alt="<?php echo $row['title']; ?> " >
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row['title']; ?></h5>
+                            <p class="card-text">Price: $<?php echo $row['price']; ?></p>
+                            <form method="post" action="food.php">
+                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                                <input type="hidden" name="title" value="<?php echo $row['title']; ?>" />
+                                <input type="hidden" name="price" value="<?php echo $row['price']; ?>" />
+                                <input type="hidden" name="image_name" value="<?php echo $row['image_name']; ?>" />
+                                <button type="submit" name="add_to_cart" class="btn btn-primary">Add to Cart</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-
-
-
-
-        <?php
-            }
-        } else {
-            // food not available
-            echo "<div class='error'>Food not Available</div>";
-        }
-
-
-        ?>
-
-
-
-
-
-
-        <div class="clearfix"></div>
-
-
-
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p>No food items available.</p>
+        <?php endif; ?>
     </div>
 
     <p class="text-center">
-        <a href="<?php echo SITEURL; ?>foods.php">See All Foods</a>
+        <a class="btn btn-outline-secondary" href="<?php echo SITEURL; ?>food.php">See All Foods</a>
     </p>
 </section>
-<!-- fOOD Menu Section Ends Here -->
+
+<!-- food section ends here -->
 
 
-
-
-
+<br>
+<br>
 
 <?php include('partials-front/footer.php'); ?>

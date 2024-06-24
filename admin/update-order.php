@@ -9,6 +9,7 @@
 
 
         <?php
+        ob_start();
         // check whether id is set or not
         if (isset($_GET['id'])) {
             // get order details
@@ -126,6 +127,8 @@
 
 
         <?php
+
+        
         // check whether update button is clicked or not
         if (isset($_POST['submit'])) {
             // echo "clicked";
@@ -164,6 +167,7 @@
                 // updated
                 $_SESSION['update'] = "<div class='success'>Order updated successfully.</div>";
                 header('location:' . SITEURL . 'admin/manage-order.php');
+                ob_end_flush();
             } else {
                 // failed
                 $_SESSION['update'] = "<div class='error'>Failed to update order.</div>";

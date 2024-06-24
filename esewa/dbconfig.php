@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
 $db = 'esewa';
-$user = ''; // Your database user
+$user = 'root'; // Your database user
 $password =''; // Your Database password
 
 $conn = new mysqli($host, $user, $password, $db);

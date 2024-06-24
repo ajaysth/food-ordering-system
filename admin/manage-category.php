@@ -4,7 +4,7 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Manage Category</h1>
+        <h1 class="fs-1 text-center">Manage Category</h1>
         <br><br>
 
         <?php

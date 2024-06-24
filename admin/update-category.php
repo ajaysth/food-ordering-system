@@ -61,7 +61,7 @@
                         <?php
                         } else {
                             // display the message
-                            echo "<div class='error'>Image not added.</div>";
+                            echo "<div class='error text-center'>Image not added.</div>";
                         }
                         ?>
                     </td>
@@ -173,6 +173,9 @@
                             die(); // stop the process
                         }
                     }
+                }else{
+                    $image_name = $current_image;
+
                 }
             } else {
                 $image_name = $current_image;

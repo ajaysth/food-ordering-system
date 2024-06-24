@@ -1,5 +1,5 @@
 <!-- social Section Starts Here -->
-<section class="social">
+<section class="social bg-body-tertiary text-center text-lg-start" id="contact">
     <div class="container text-center">
         <ul>
             <li>
@@ -17,7 +17,7 @@
 <!-- social Section Ends Here -->
 
 <!-- footer Section Starts Here -->
-<section class="footer">
+<section class="bg-body-tertiary text-center text-lg-start" style="width:100%">
     <div class="container text-center">
         <p>All rights reserved. Designed By <a href="#">Sophiya&Ajay</a></p>
         <p>Contact us at: +977985555555</p>

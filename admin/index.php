@@ -10,6 +10,7 @@
         <h1>Dashboard</h1>
         <br><br>
 
+
         <?php
         if (isset($_SESSION['login'])) {
             echo $_SESSION['login'];
@@ -86,6 +87,11 @@
             Revenue Generated
         </div>
         <div class="clearfix"></div>
+        <br>
+        <br><br>
+
+
+        <a class="fs-5 btn btn-warning text-center" style="position:relative; left:45%"  href="export.php">Export data</a>
 
 
     </div>

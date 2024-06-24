@@ -1,14 +1,29 @@
-function sure(){
+function sure()
+{ 
+    debugger
     let logOut=confirm("Are you sure you want to log out?");
-    if(logOut==TRUE){
+    if(logOut == TRUE){
+        
         window.location.href("../logout.php");
+        
     }else{
-        document.write("logout failed");
+        window.location.href("../cancel.php");
+            
     }
 }
 
 
-function myFunction() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
+// function myFunction() {
+//    var element = document.body;
+//    element.classList.toggle("dark-mode");
+// }
+
+
+// function confirmLogout() {
+//     return confirm("Are you sure you want to log out?");
+// }
+
+// document.getElementById('cancelButton').addEventListener('click', function(event) {
+//     event.preventDefault();
+//     window.location.href = '../logout.php'; // Redirect to the desired URL
+// });

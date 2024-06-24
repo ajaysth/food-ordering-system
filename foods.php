@@ -6,7 +6,7 @@
 
         <form action="<?php echo SITEURL; ?>food-search.php" method="POST">
             <input type="search" name="search" placeholder="Search for Food.." required>
-            <input type="submit" name="submit" value="Search" class="btn btn-primary">
+            <input type="submit" class="btn btn-warning btn-lg" name="submit" value="Search"class="btn btn-primary">
         </form>
 
     </div>

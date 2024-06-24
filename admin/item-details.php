@@ -19,7 +19,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<h3> Food: " . $row['food'] . "</h3>";
+        // echo "<h3> SN: " . $row['id'] . "</h3>";
+        echo "<h5> Food: " . $row['food'] . "</h5>";
         // echo "<p> Price: " . $row['price'] . "</p>";
         echo "<p> Quantity: " . $row['qty'] . "</p>";
         echo "<p> Status:" . $row['status'] . "</p>";
