@@ -11,5 +11,4 @@ if (isset($_SESSION['cart'])) {
 header("Location: food.php"); // Adjust the target location as needed
 exit();
 
-
 ?>
