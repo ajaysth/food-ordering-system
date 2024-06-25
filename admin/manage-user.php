@@ -67,7 +67,9 @@
                             <td><?php echo $address ?></td>
                             <td>
                                 <!-- <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn btn-outline-secondary">Update</a> -->
-                                <a href="<?php echo SITEURL; ?>admin/delete-user.php?id=<?php echo $id; ?>" class="btn btn-outline-danger">Delete</a>
+                                <a href="<?php echo SITEURL; ?>admin/delete-user.php?id=<?php echo $id; ?>" class="btn btn-outline-danger" >Delete</a>
+
+
 
                             </td>
                         </tr>
@@ -114,6 +116,15 @@ function myFunction() {
     }
 }
 </script> -->
+
+<script>
+        function confirmDelete(userId) {
+            if (confirm("Are you sure you want to delete this user?")) {
+                window.location.href = 'delete-user.php?id=' + userId;
+            }
+        }
+    </script>
+
 
 
 <?php include('partials/footer.php') ?>

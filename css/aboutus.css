@@ -1,0 +1,37 @@
+/* Custom styles for About Us page */
+
+.header {
+    background: url('https://via.placeholder.com/1920x600') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.header .container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+hr {
+    border-top: 2px solid #ccc;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.img-fluid.rounded {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

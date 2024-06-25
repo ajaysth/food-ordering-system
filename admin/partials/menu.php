@@ -15,6 +15,14 @@ include('login-check.php');
     <link rel="stylesheet" href="../css/order.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <script>
+        function confirmLogout(event) {
+            if (!confirm("Are you sure you want to log out?")) {
+                event.preventDefault();
+            }
+        }
+    </script>
+
 
     <!-- <style>
         .dark-mode {
@@ -32,12 +40,12 @@ include('login-check.php');
             <ul>
                 <li><a class="fs-5" href="index.php">Home</a></li>
                 <!-- <li><a class="fs-5" href="manage-admin.php">Admin Manager</a></li> -->
-                <li><a class="fs-5" href="manage-user.php">User Manager</a></li>
+                <li><a class="fs-5" href="usermanage.php">User Manager</a></li>
                 <li><a class="fs-5" href="manage-category.php">Category</a></li>
                 <li><a class="fs-5" href="manage-food.php">Food</a></li>
                 <li><a class="fs-5" href="manage-order.php">Order</a></li>
 
-                <li><a class=" fs=4 btn btn-danger"  style=" position:absolute; right: 5px" href="logout.php" onclick="sure()"><i class="fa fa-sign-out" style="color: white; " aria-hidden="true"></i></a></li>
+                <li><a class=" fs=4 btn btn-danger"  style=" position:absolute; right: 5px" href="logout.php" onclick="confirmLogout(event)"><i class="fa fa-sign-out" style="color: white; " aria-hidden="true"></i></a></li>
                 
             </ul>
 

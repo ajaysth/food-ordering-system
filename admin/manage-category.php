@@ -121,7 +121,7 @@
                         <td><?php echo $active ?></td>
                         <td>
                             <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn btn-outline-secondary">Update</a>
-                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn btn-outline-danger">Delete</a>
+                            <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" onclick="confirmDelete(event)" class="btn btn-outline-danger">Delete</a>
 
                         </td>
                     </tr>
@@ -168,6 +168,14 @@ function myFunction() {
     }
 }
 </script> -->
+
+<script>
+        function confirmDelete(event) {
+            if (!confirm("Are you sure you want to delete this category?")) {
+                event.preventDefault();
+            }
+        }
+    </script>
 
 
 <?php include('partials/footer.php') ?>

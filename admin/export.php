@@ -5,25 +5,27 @@
         <br><br>
 
 
-<div class="export" style="display:flex; align-items:center; justify-content:center;">
+<div class="export" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
 
-        <form class="text-center" method="get" action="generate_pdf.php">
+        <form class="text-center " method="get" action="generate_pdf.php">
                 <label for="table">Select Table:</label>
-                <select  name="table" id="table">
+                <select  name="table" class="form-select" id="table">
                     <option value="tbl_order">Orders</option>
                     <option value="tbl_food">Foods</option>
                     <option value="tbl_users">Users</option>
-                </select>
+                    <option value="tbl_category">Category</option>
+                </select><br>
                 <button class="btn btn-success" type="submit">Export as PDF</button>
         </form><br><br><br><br>
 
         <form class="text-center" style="margin-left:20px" method="get" action="generate_excel.php">
                 <label for="table">Select Table:</label>
-                <select name="table" id="table">
+                <select name="table" id="table" class="form-select">
                     <option value="tbl_order">Orders</option>
                     <option value="tbl_food">Foods</option>
                     <option value="tbl_users">Users</option>
-                </select>
+                    <option value="tbl_category">Category</option>
+                </select><br>
                 <button class="btn btn-success" type="submit">Export as Excel</button>
         </form>
  

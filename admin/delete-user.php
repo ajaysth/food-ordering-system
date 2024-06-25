@@ -22,10 +22,10 @@ if ($res == TRUE) {
     // create session variable to display message i
     $_SESSION['delete'] = "<div class='success text-center'>User deleted</div>";
     // redirect to manage admin page
-    header('location:' . SITEURL . 'admin/manage-user.php');
+    header('location:' . SITEURL . 'admin/usermanage.php');
 } else {
     //not deleted
     // echo "not deleted";
     $_SESSION['delete'] = "<div class='error text-center'>Failed to delete admin</div>";
-    header('location:' . SITEURL . 'admin/manage-user.php');
+    header('location:' . SITEURL . 'admin/usermanage.php');
 }

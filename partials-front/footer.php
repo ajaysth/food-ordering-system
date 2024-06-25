@@ -3,13 +3,13 @@
     <div class="container text-center">
         <ul>
             <li>
-                <a href="#"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
+                <a href="https://www.facebook.com/profile.php?id=61561144934783"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
             </li>
             <li>
-                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
+                <a href="https://www.instagram.com/foodey0819?igsh=MTd3ODNucDFjbGpzMA=="><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
             </li>
             <li>
-                <a href="#"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
+                <a href="https://x.com/Foodey0819"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
             </li>
         </ul>
     </div>
