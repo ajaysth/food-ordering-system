@@ -99,7 +99,7 @@ if (isset($_POST['add_to_cart'])) {
                         <img src="images/food/<?php echo $row['image_name']; ?>" class="card-img-top img-fluid" style="max-height: 200px; object-fit: cover;" alt="<?php echo $row['title']; ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title']; ?></h5>
-                            <p class="card-text">Price: $<?php echo $row['price']; ?></p>
+                            <p class="card-text">Price: Rs <?php echo $row['price']; ?></p>
                             <form method="post" action="category-specific.php?category_id=<?php echo $category_id; ?>&title=<?php echo urlencode($row['title']); ?>">
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                                 <input type="hidden" name="title" value="<?php echo $row['title']; ?>" />
@@ -134,15 +134,15 @@ if (isset($_POST['add_to_cart'])) {
                 <tr>
                     <td><?php echo $item['title']; ?></td>
                     <td><img src="images/food/<?php echo $item['image_name']; ?>" class="img-fluid" style="max-height: 50px; object-fit: cover;" alt="<?php echo $item['title']; ?>"></td>
-                    <td>$<?php echo $item['price']; ?></td>
+                    <td>Rs <?php echo $item['price']; ?></td>
                     <td><?php echo $item['quantity']; ?></td>
-                    <td>$<?php echo $item['price'] * $item['quantity']; ?></td>
+                    <td>Rs <?php echo $item['price'] * $item['quantity']; ?></td>
                 </tr>
                 <?php $total += $item['price'] * $item['quantity']; ?>
             <?php endforeach; ?>
             <tr>
                 <td colspan="4" class="text-right"><strong>Total</strong></td>
-                <td><strong>$<?php echo $total; ?></strong></td>
+                <td><strong>Rs <?php echo $total; ?></strong></td>
             </tr>
             </tbody>
         </table>

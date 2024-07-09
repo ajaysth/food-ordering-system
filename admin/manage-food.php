@@ -49,7 +49,7 @@
             <tr>
                 <th>S.N</th>
                 <th>Title</th>
-                <th>Price</th>
+                <th>Price(in RS)</th>
                 <th>Image</th>
                 <th>Featured</th>
                 <th>Active</th>

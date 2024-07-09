@@ -1,15 +1,16 @@
 <?php
-session_start();
+
 if (isset($_POST['submit'])) {
-    $amount = $_POST['inputAmount4']*100; // convert the amount to paisa as the amount should be in paisa for khalti
-    $purchase_order_id = $_POST['inputPurchasedOrderId4'];
-    $purchase_order_name = $_POST['inputPurchasedOrderName'];
+    $paisa=100;
+    $amount = $_POST['inputAmount4']*$paisa; // convert the amount to paisa as the amount should be in paisa for khalti
+    // $purchase_order_id = $_POST['inputPurchasedOrderId4'];
+    // $purchase_order_name = $_POST['inputPurchasedOrderName'];
     $name = $_POST['inputName'];
     // $email = $_POST['inputEmail'];
     // $phone = $_POST['inputPhone'];
 
     //here validate the data
-    if(empty($amount) || empty($purchase_order_id) || empty($purchase_order_name) || empty($name) ){
+    if(empty($amount)  || empty($name) ){
         $_SESSION["validate_msg"] = '<script>
         Swal.fire({
             icon: "error",

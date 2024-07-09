@@ -49,6 +49,8 @@
                     <td>
                         <select name="category">
                             <?php
+
+                            ob_start();
                             // to display categories from database
                             // 1.create sql query to get all active categories from database
                             $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
@@ -197,6 +199,7 @@
                 // redirect to manage food page with success message
                 $_SESSION['add'] = "<div class='success'>Food added successfully</div>";
                 header('location:' . SITEURL . 'admin/manage-food.php');
+                ob_end_flush();
             } else {
                 // error message
                 $_SESSION['add'] = "<div class='error'>Failed to add food</div>";

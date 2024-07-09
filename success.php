@@ -9,6 +9,17 @@
 
         ob_start();
 ?>
+<?php
+ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+    foreach ($_SESSION['cart'] as $item) {
+        $food_name = $item['title'];
+        $quantity = $item['quantity'];
+        $price = $item['price'];
+        $order_date = date("Y-m-d h:i:sa"); // order date
+        $total += $item['price'] * $item['quantity'];
+    }}
+        
+        ?>
     
     <form method="post" action="ok.php">
     <!-- <div class="form-check">
@@ -82,7 +93,7 @@
             // replace the publicKey with yours
             "publicKey": "test_public_key_feb919f31eba40e0b2e99aad56ee91a3",
             "productIdentity": "1234567890",
-            "productName": "MOMO",
+            "productName": "Pizza",
             "productUrl": "http://localhost/foodaj/food.php",
             "paymentPreference": [
                 "KHALTI",
@@ -118,7 +129,7 @@
         var btn = document.getElementById("payment-button");
         btn.onclick = function () {
             // minimum transaction amount must be 10, i.e 1000 in paisa.
-            checkout.show({amount: 1000});
+            checkout.show({amount: 19500});
         }
     </script>
     <!-- Paste this code anywhere in you body tag -->

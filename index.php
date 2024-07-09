@@ -170,7 +170,7 @@ if (isset($_POST['add_to_cart'])) {
                         <img src="images/food/<?php echo $row['image_name']; ?>"  class="card-img-top" style="max-height: 400px; object-fit: cover;" alt="<?php echo $row['title']; ?> " >
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title']; ?></h5>
-                            <p class="card-text">Price: $<?php echo $row['price']; ?></p>
+                            <p class="card-text">Price: Rs <?php echo $row['price']; ?></p>
                             <form method="post" action="food.php">
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                                 <input type="hidden" name="title" value="<?php echo $row['title']; ?>" />

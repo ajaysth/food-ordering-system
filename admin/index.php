@@ -98,5 +98,6 @@
 
 </div>
 <!-- main content section ends -->
+ 
 
 <?php include('partials/footer.php') ?>
