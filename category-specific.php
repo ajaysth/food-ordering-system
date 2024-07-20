@@ -141,7 +141,7 @@ if (isset($_POST['add_to_cart'])) {
                 <?php $total += $item['price'] * $item['quantity']; ?>
             <?php endforeach; ?>
             <tr>
-                <td colspan="4" class="text-right"><strong>Total</strong></td>
+                <td colspan="4" class="text-right"><strong>Total </strong></td>
                 <td><strong>Rs <?php echo $total; ?></strong></td>
             </tr>
             </tbody>
