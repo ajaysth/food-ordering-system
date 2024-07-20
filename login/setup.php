@@ -9,13 +9,13 @@ require_once 'vendor/autoload.php';
 $google = new Google_Client();
 
 //Set the OAuth 2.0 Client ID
-$google->setClientId('600849393126-9v139atiib9bm96rhfedmud0ae5sbfus.apps.googleusercontent.com');
+$google->setClientId('987877106871-eoib15ugeouha5sj3188b1vhggd4ho49.apps.googleusercontent.com');
 
 //Set the OAuth 2.0 Client Secret key
-$google->setClientSecret('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');
+$google->setClientSecret('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');
 
 //Set the OAuth 2.0 Redirect URI
-$google->setRedirectUri('http://localhost/foodaj/login/profile.php');
+$google->setRedirectUri('http://localhost/foodaj/login/oauth2callback.php');
 
 // to get the email and profile 
 $google->addScope('email');
@@ -24,3 +24,27 @@ $google->addScope('profile');
 
 //start session on web page
 session_start();
+
+
+
+
+// Check if the user is authenticated
+// if (isset($_GET['code'])) {
+//     $token = $google->fetchAccessTokenWithAuthCode($_GET['code']);
+//     if (!isset($token['error'])) {
+//         $google->setAccessToken($token['access_token']);
+
+//         // Get profile info
+//         $google_service = new Google_Service_Oauth2($google);
+//         $data = $google_service->userinfo->get();
+
+//         $_SESSION['user'] = $data;
+//         $_SESSION['login_message'] = "Login successful";
+
+//         header('Location: http://localhost/foodaj/index.php');
+//         exit();
+//     } else {
+//         echo "Error during authentication: " . $token['error'];
+//     }
+// }
+

@@ -152,6 +152,9 @@ if (isset($_POST['submit'])) {
     if ($count == 1) {
         // user available and login success
         $_SESSION['login'] = "<div class='success'>Login successful</div>";
+        if(!isset($_SESSION)){
+            session_start();
+           }
         $_SESSION['user'] = $username; // to check whether is logged in or not and logout will unset it
         // redirect to homepage dashboard
         

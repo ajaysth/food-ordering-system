@@ -30,6 +30,29 @@ include('login-check.php');
     color: white;
   }
     </style> -->
+
+    <style>
+        .dashboard-box {
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            flex:1;
+        }
+        .dashboard-box h3 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .dashboard-box p {
+            margin: 0;
+            color: #6c757d;
+        }
+        .export-btn {
+            margin-top: 20px;
+        }
+    </style>
     
 </head>
 

@@ -12,6 +12,11 @@
             echo $_SESSION['update'];
             unset($_SESSION['update']);
         }
+
+        if (isset($_SESSION['delete'])) {
+            echo $_SESSION['delete'];
+            unset($_SESSION['delete']);
+        }
         ?>
 
 
@@ -39,7 +44,7 @@
                 <th >Price</th>
                 <th >Qty</th>
                 <th >Total</th>
-                <th >order Date</th>
+                <!-- <th >order Date</th> -->
                 <th >Status</th>
                 <th >Customer Name</th>
                 <th >Contact</th>
@@ -81,7 +86,7 @@
                         <td style="padding-left:3px;"><?php echo $price; ?></td>
                         <td style="padding-left:3px;"><?php echo $qty; ?></td>
                         <td style="padding-left:3px;"><?php echo $total; ?></td>
-                        <td style="padding-left:3px;"><?php echo $order_date; ?></td>
+                        <!-- <td style="padding-left:3px;"><?php echo $order_date; ?></td> -->
                         <!-- <td>
                             <?php
                             // ordered, On delivery, Delivered, Canceled
@@ -104,7 +109,7 @@
                         <td style="padding-left:3px;"><?php echo $customer_address; ?></td>
                         <td style="padding-left:3px;">
                             <a href="<?php echo SITEURL; ?>admin/update-order.php?id=<?php echo $id; ?>" class="btn btn-outline-secondary">Update</a>
-                            <a href="" class="btn btn-outline-danger">Delete</a>
+                            <a href="<?php echo SITEURL; ?>admin/delete-order.php?id=<?php echo $id; ?>" onclick="confirmDeleteOrder(event)" class="btn btn-outline-danger">Delete</a>
 
                         </td>
                     </tr>
@@ -144,6 +149,13 @@
     </script> -->
 
 <script>
+    
+        function confirmDeleteOrder(event) {
+            if (!confirm("Are you sure you want to delete this order?")) {
+                event.preventDefault();
+            }
+        }
+  
     function showRecommendations(str) {
             if (str.length == 0) {
                 document.getElementById("recommendations").innerHTML = "";

@@ -45,6 +45,7 @@
             <th>Name</th>
             <th>Username</th>
             <th>Email</th>
+            <th>Address</th>
             <th>Action</th>
         </tr>
         <?php
@@ -54,6 +55,8 @@
             echo "<td>" . $user['fname'] . "</td>";
             echo "<td>" . $user['username'] . "</td>";
             echo "<td>" . $user['email'] . "</td>";
+            echo "<td>" . $user['address'] . "</td>";
+           
             
             echo "<td><button class='btn btn-outline-danger' onclick='confirmDelete(" . $user['id'] . ")'>Delete</button></td>";
             echo "</tr>";

@@ -273,3 +273,15 @@ fieldset{
         width: 100%;
     }
 }
+
+.clear-cart{
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+

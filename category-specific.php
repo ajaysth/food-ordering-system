@@ -146,11 +146,16 @@ if (isset($_POST['add_to_cart'])) {
             </tr>
             </tbody>
         </table>
+
+
+
+
+        
         <!-- Checkout Form -->
         <form method="post" action="checkout.php">
             <div class="form-group">
                 <label for="customer_name">Customer Name</label>
-                <input type="text" class="form-control" id="customer_name" name="customer_name" required>
+                <input type="text" class="form-control" id="customer_name" name="customer_name"  required>
             </div>
             <div class="form-group">
                 <label for="contact">Contact</label>
@@ -158,7 +163,7 @@ if (isset($_POST['add_to_cart'])) {
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" value="" required>
             </div>
 
             <div class="form-group">
@@ -168,11 +173,22 @@ if (isset($_POST['add_to_cart'])) {
             <button type="submit" class="btn btn-success">Checkout</button>
         </form>
         <br>
-        <a href="cancel.php" class="btn btn-danger">Clear Cart</a>
+        <a href="cancel.php" class="btn btn-danger" onclick="confirmClearCart(event)">Clear Cart</a>
     <?php else: ?>
         <p>Your cart is empty.</p>
     <?php endif; ?>
 </div>
+
+
+
+<script>
+function confirmClearCart(event) {
+            if (!confirm("Are you sure you want to delete this food?")) {
+                event.preventDefault();
+            }
+        }
+    </script>
+
 <?php include('partials-front/footer.php'); ?>
 
 

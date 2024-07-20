@@ -17,7 +17,6 @@
 
   <?php
 // Define variables and set to empty values
-$conn2='';
 $fullnameErr = $usernameErr = $emailErr = $passwordErr = $phonenumberErr = $dateofbirthErr = $genderErr = $currentaddressErr = $cityErr = $provinceErr = "";
 $fullname = $username = $email = $password = $phonenumber = $dateofbirth = $gender = $currentaddress = $alt_address = $city = $province = "";
 
@@ -43,35 +42,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Email validation
-    
-      if (empty($_POST["email"])) 
-      {
-          $emailErr = "Email is required";
-      } else 
-      {
-          $email = test_input($_POST["email"]);
-          // Check if e-mail address is well-formed
-          if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-              $emailErr = "Invalid email format";
-          } else {
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname="food-order";
-
-              // Create connection
-              $conn2 = new mysqli($servername, $username, $password,$dbname);
-              // Check if email is unique in the database
-              $stmt = $conn2->prepare("SELECT id FROM tbl_users WHERE email = ?");
-              $stmt->bind_param("s", $email);
-              $stmt->execute();
-              $result = $stmt->get_result();
-              if ($result->num_rows > 0) 
-              {
-                $emailErr = "Email already exists";
-              }
-            }
+    if (empty($_POST["email"])) {
+      $emailErr = "Email is required";
+  } else {
+      // Validate email format
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format.";
+      } else {
+          // Check if email is unique in the database
+          $sql = "SELECT id FROM tbl_users WHERE email = ?";
+          $stmt = $conn->prepare($sql);
+          $stmt->bind_param("s", $email);
+          $stmt->execute();
+          $stmt->store_result();
+          if ($stmt->num_rows > 0) {
+            $emailErr = "Email is already taken.";
+          }
+          $stmt->close();
       }
+  }
 
     // Password validation
     if (empty($_POST["password"])) {

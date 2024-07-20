@@ -2,9 +2,9 @@
  
 
  //session starts
-if(!isset($_SESSION)){
- session_start();
-}
+// if(!isset($_SESSION)){
+//  session_start();
+// }
 
 
  //create constants to store non repeatingvalues

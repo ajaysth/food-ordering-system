@@ -75,7 +75,7 @@ if (isset($_POST['add_to_cart'])) {
             <?php while($row = $result->fetch_assoc()): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="images/food/<?php echo $row['image_name']; ?>"  class="card-img-top" style="max-height: 150px; object-fit: cover;" alt="<?php echo $row['title']; ?> " >
+                        <img src="images/food/<?php echo $row['image_name']; ?>"  class="card-img-top" style="max-height: 350px; object-fit: cover;" alt="<?php echo $row['title']; ?> " >
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title']; ?></h5>
                             <p class="card-text">Price: Rs <?php echo $row['price']; ?></p>
@@ -132,7 +132,18 @@ if (isset($_POST['add_to_cart'])) {
                     
                 </table>
 
-       
+       <?php
+
+       $email='';
+
+if (isset($_SESSION['user']) && is_array($_SESSION['user'])) {
+    $username = $_SESSION['user']['username'];
+    $email = $_SESSION['user']['email'];
+    $user_id = $_SESSION['user']['id'];
+    
+}
+?>
+
         <!-- Checkout Form -->
         <form method="post" action="checkout.php">
             <div class="form-group">
@@ -147,7 +158,7 @@ if (isset($_POST['add_to_cart'])) {
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email"  >
+                <input type="email" class="form-control" id="email" value="<?php echo $email;?>" name="email"  >
                 
             </div>
 
@@ -155,17 +166,33 @@ if (isset($_POST['add_to_cart'])) {
                 <label for="address">Address</label>
                 <input type="text" class="form-control" id="address" name="address" required>
         
-            </div><br>
-            <button type="submit" class="btn btn-success">Checkout</button>
+            </div>
+            <br>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success">Checkout</button>
+            </div>
             
         </form>
         <br>
-        <a href="cancel.php" class="btn btn-danger">Clear Cart</a>
+        <div class="d-flex justify-content-center">
+            <a  href="cancel.php" class="btn btn-danger clear-cart" onclick="confirmClearCart(event)">Clear Cart</a>
+        </div>
         
-    <?php else: ?>
-        <p>Your cart is empty.</p>
-    <?php endif; ?>
+            <?php else: ?>
+                <p>Your cart is empty.</p>
+            <?php endif; ?>
 </div>
+<script>
+function confirmClearCart(event) {
+            if (!confirm("Are you sure you want to delete this food?")) {
+                event.preventDefault();
+            }
+        }
+    </script>
+
+
+
 <?php include('partials-front/footer.php'); ?>
 
  

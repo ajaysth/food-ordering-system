@@ -25,6 +25,7 @@
 
 
 <?php
+$description='';
 
 $sql = "SELECT id, title, price, description, image_name FROM tbl_food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
 $result = $conn->query($sql);
@@ -139,11 +140,19 @@ if (isset($_POST['add_to_cart'])) {
             <button type="submit" class="btn btn-success">Checkout</button>
         </form>
         <br>
-        <a href="cancel.php" class="btn btn-danger">Clear Cart</a>
+        <a href="cancel.php" class="btn btn-danger text-center" onclick="confirmClearCart(event)">Clear Cart</a>
     <?php else: ?>
         <p>Your cart is empty.</p>
     <?php endif; ?>
 </div>
+
+<script>
+function confirmClearCart(event) {
+            if (!confirm("Are you sure you want to delete this food?")) {
+                event.preventDefault();
+            }
+        }
+    </script>
 
 
 <?php include('partials-front/footer.php'); ?>
