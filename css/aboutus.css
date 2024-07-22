@@ -1,7 +1,7 @@
 /* Custom styles for About Us page */
 
 .header {
-    background: url('https://via.placeholder.com/1920x600') no-repeat center center;
+    /* background: url('../images/abubg.jpg') no-repeat center center; */
     background-size: cover;
     color: #fff;
 }

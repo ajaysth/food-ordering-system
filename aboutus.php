@@ -15,7 +15,7 @@
                 <p>We strive to provide the best services to our customers by focusing on quality, innovation, and sustainability. Our mission is to make a positive impact in the world by offering products and services that enhance lives.</p>
             </div>
             <div class="col-md-6">
-                <img src="https://via.placeholder.com/500" alt="Our Mission" class="img-fluid rounded">
+                <img src="images/mission.jpg" alt="Our Mission" class="img-fluid rounded">
             </div>
         </div>
 
@@ -27,7 +27,7 @@
                 <p>Our team is composed of talented and dedicated professionals who are passionate about what they do. We work collaboratively to achieve our goals and support each other in our endeavors.</p>
             </div>
             <div class="col-md-6 order-md-1">
-                <img src="https://via.placeholder.com/500" alt="Our Team" class="img-fluid rounded">
+                <img src="images/team.jpg" alt="Our Team" class="img-fluid rounded">
             </div>
         </div>
 
@@ -39,7 +39,7 @@
                 <p>Integrity, excellence, and customer satisfaction are at the core of our values. We believe in doing business ethically and always putting our customers first.</p>
             </div>
             <div class="col-md-6">
-                <img src="https://via.placeholder.com/500" alt="Our Values" class="img-fluid rounded">
+                <img src="images/values.jpg" alt="Our Values" class="img-fluid rounded">
             </div>
         </div>
     </main>

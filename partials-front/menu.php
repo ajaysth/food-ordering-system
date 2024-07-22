@@ -66,6 +66,7 @@ include('login-check.php');
                         <a class="text-uppercase fs-5 btn btn-danger" style="text-decoration: none; font-family: 'Comic Sans MS', cursive, sans-serif;" href="login/logout.php" onclick="confirmLogout(event)"> <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                         
                     </li>
+                    
                     <!-- <li>
                         <a class="text-uppercase" style="text-decoration: none;" href="#" >My Cart(0)</a>
                         <i class="bi bi-bag-fill"></i>

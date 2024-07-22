@@ -1,6 +1,6 @@
 <?php include('partials-front/menu.php'); 
 
-$sql = "SELECT id, title, price, image_name FROM tbl_food";
+$sql = "SELECT id, title, price, image_name FROM tbl_food where active='yes'";
 $result = $conn->query($sql);
 ?>
 
@@ -75,7 +75,7 @@ if (isset($_POST['add_to_cart'])) {
             <?php while($row = $result->fetch_assoc()): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="images/food/<?php echo $row['image_name']; ?>"  class="card-img-top" style="max-height: 350px; object-fit: cover;" alt="<?php echo $row['title']; ?> " >
+                        <img src="images/food/<?php echo $row['image_name']; ?>"  class="card-img-top" style="max-height: 300px; object-fit: cover;" alt="<?php echo $row['title']; ?> " >
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title']; ?></h5>
                             <p class="card-text">Price: Rs <?php echo $row['price']; ?></p>

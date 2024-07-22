@@ -50,7 +50,7 @@ if (isset($_SESSION['transaction'])) {
 
         <?php
         // create sql queries to display categories from database
-        $sql = "SELECT * FROM tbl_category WHERE active='Yes' AND featured='Yes' LIMIT 4";
+        $sql = "SELECT * FROM tbl_category WHERE active='Yes' AND featured='Yes' LIMIT 3";
         // execute the query
         $res = mysqli_query($conn, $sql);
         // count rows to check whether the category is available or not
@@ -115,6 +115,7 @@ if (isset($_SESSION['transaction'])) {
 
 
 <!-- food section starts here -->
+ <section>
 <?php  
 
 $sql = "SELECT id, title, price, image_name FROM tbl_food LIMIT 3"  ;
@@ -167,7 +168,7 @@ if (isset($_POST['add_to_cart'])) {
             <?php while($row = $result->fetch_assoc()): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="images/food/<?php echo $row['image_name']; ?>"  class="card-img-top" style="max-height: 300px; object-fit: contain;" alt="<?php echo $row['title']; ?> " >
+                        <img src="images/food/<?php echo $row['image_name']; ?>"  class="card-img-top" style="max-height: 300px; object-fit: cover;" alt="<?php echo $row['title']; ?> " >
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $row['title']; ?></h5>
                             <p class="card-text">Price: Rs <?php echo $row['price']; ?></p>

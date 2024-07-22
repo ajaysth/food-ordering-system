@@ -15,7 +15,8 @@ $google->setClientId('987877106871-eoib15ugeouha5sj3188b1vhggd4ho49.apps.googleu
 $google->setClientSecret('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');
 
 //Set the OAuth 2.0 Redirect URI
-$google->setRedirectUri('http://localhost/foodaj/login/oauth2callback.php');
+// $google->setRedirectUri('http://localhost/foodaj/login/oauth2callback.php');
+$google->setRedirectUri('http://localhost/foodaj/index.php');
 
 // to get the email and profile 
 $google->addScope('email');

@@ -169,11 +169,16 @@ if (isset($_POST['add_to_cart'])) {
             <div class="form-group">
                 <label for="address">Address</label>
                 <input type="text" class="form-control" id="address" name="address" required>
-            </div><br>
-            <button type="submit" class="btn btn-success">Checkout</button>
+            </div>
+            <br>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-success">Checkout</button>
+            </div>
         </form>
         <br>
-        <a href="cancel.php" class="btn btn-danger" onclick="confirmClearCart(event)">Clear Cart</a>
+        <div class="d-flex justify-content-center">
+            <a href="cancel.php" class="btn btn-danger" onclick="confirmClearCart(event)">Clear Cart</a>
+        </div>
     <?php else: ?>
         <p>Your cart is empty.</p>
     <?php endif; ?>

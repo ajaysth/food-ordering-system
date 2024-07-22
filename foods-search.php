@@ -1,3 +1,4 @@
+<?php  $search=''; $description='';?>
 <?php include('partials-front/menu.php'); ?>
 
 <section class="food-search text-center">
@@ -66,7 +67,7 @@ if (isset($_POST['add_to_cart'])) {
 
     // Redirect to avoid form resubmission
     header("Location: foods-search.php");
-    exit();
+    // exit();
 }
 ?>
 
@@ -85,7 +86,7 @@ if (isset($_POST['add_to_cart'])) {
                             <h5 class="card-title text-center"><?php echo $row['title']; ?></h5>
                             <p class="card-text">Price: $<?php echo $row['price']; ?></p>
                             <p class="card-text"><?php echo $row['description']; ?></p>
-                            <form method="post" action="foods-search.php">
+                            <form method="post" action="food.php">
                                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                                 <input type="hidden" name="title" value="<?php echo $row['title']; ?>" />
                                 <input type="hidden" name="price" value="<?php echo $row['price']; ?>" />
@@ -137,10 +138,14 @@ if (isset($_POST['add_to_cart'])) {
             </tbody>
         </table>
         <form method="post" action="checkout.php">
+        <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-success">Checkout</button>
+            </div>
         </form>
         <br>
+        <div class="d-flex justify-content-center">
         <a href="cancel.php" class="btn btn-danger text-center" onclick="confirmClearCart(event)">Clear Cart</a>
+        </div>
     <?php else: ?>
         <p>Your cart is empty.</p>
     <?php endif; ?>

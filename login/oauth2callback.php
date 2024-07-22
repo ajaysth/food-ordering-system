@@ -1,5 +1,8 @@
 <?php
 require_once 'vendor/autoload.php';
+require_once '../partials-front/menu.php';
+session_start();
+
 
 
 
@@ -18,6 +21,8 @@ $google->setClientSecret('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');
 
 //Set the OAuth 2.0 Redirect URI
 $google->setRedirectUri('http://localhost/foodaj/login/oauth2callback.php');
+// $google->setRedirectUri('http://localhost/foodaj/index.php');
+
 
 // to get the email and profile 
 $google->addScope('email');
@@ -47,6 +52,7 @@ if (isset($_GET['code'])) {
         $email = $google_account_info->email;
         $name = $google_account_info->name;
         $address = $google_account_info->address;
+        $password = $google_account_info->password;
 
         // Connect to the database
         $mysqli = new mysqli('localhost', 'root', '', 'food-order');
@@ -75,11 +81,11 @@ if (isset($_GET['code'])) {
         }
 
         // Close the statement and connection
-        $stmt->close();
-        $mysqli->close();
+        // $stmt->close();
+        // $mysqli->close();
 
         // Set session variables or perform other login actions
-        session_start();
+        
         $_SESSION['user_email'] = $email;
         $_SESSION['user_name'] = $name;
 

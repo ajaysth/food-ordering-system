@@ -1,4 +1,5 @@
-<?php include('partials/menu.php'); ?>
+<?php include('partials/menu.php'); 
+ob_start();?>
 
 <div class="main-content">
     <div class="wrapper">
@@ -203,6 +204,7 @@
                 // category updated
                 $_SESSION['update'] = "<div class='success'>Updated Successfully.</div>";
                 header('location:' . SITEURL . 'admin/manage-category.php');
+                ob_end_flush();
             } else {
                 // failed to update
                 $_SESSION['update'] = "<div class='error'>Failed to update category.</div>";

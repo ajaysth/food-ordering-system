@@ -1,10 +1,10 @@
 <?php
  
 
- //session starts
-// if(!isset($_SESSION)){
-//  session_start();
-// }
+//  session starts
+if(!isset($_SESSION)){
+ session_start();
+}
 
 
  //create constants to store non repeatingvalues
